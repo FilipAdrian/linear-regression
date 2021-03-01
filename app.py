@@ -5,7 +5,7 @@ import numpy as np
 from flask import Flask, request, jsonify
 
 file_name = "resources/price-model.pkl"
-
+model = joblib.load(file_name)
 app = Flask(__name__)
 
 
@@ -25,7 +25,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    global model
-    model = joblib.load(file_name)
     print("Flask Application Started along With Linear Regression Model")
     app.run(host="0.0.0.0", port=8080)
