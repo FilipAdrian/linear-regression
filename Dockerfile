@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./ .
 
 RUN pip install -r requirements.txt
-
+RUN python main.py
 
 EXPOSE 8080
 
